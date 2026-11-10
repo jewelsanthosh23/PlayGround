@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#070a15">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070a15'/%3E%3Cpath d='M32 7 57 32 32 57 7 32Z' fill='none' stroke='%2353e6dc' stroke-width='5'/%3E%3Cpath d='M32 19 45 32 32 45 19 32Z' fill='%23a88bff'/%3E%3C/svg%3E">
+  <title>FRACTURE — Break the Pattern</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Fracture home"><span class="brand-mark">◈</span> AFTERLIGHT <span class="brand-divider">/</span> ARCADE</a>
+      <div class="edition"><span class="live-dot"></span> SECTOR 07 <span class="edition-divider">·</span> SOLO RUN</div>
+      <button class="sound-toggle" id="soundButton" aria-label="Toggle sound"><span id="soundIcon">♫</span><span class="sound-label">SOUND ON</span></button>
+    </header>
+
+    <main>
+      <section class="intro">
+        <div class="eyebrow"><span>01</span> CLASSIC / RECODED</div>
+        <h1>BREAK THE <span>PATTERN</span><i>↗</i></h1>
+        <p>One hit. Two balls. Let the chaos do the work.</p>
+      </section>
+
+      <section class="game-layout" aria-label="Breakout game">
+        <div class="rail rail-left" aria-hidden="true"><span>FIELD NOTES</span><div class="rail-line"></div><span>VOL. 01 — 07</span></div>
+        <div class="game-column">
+          <div class="hud">
+            <div class="hud-stat"><span class="stat-label">SCORE</span><strong id="score">000000</strong></div>
+            <div class="hud-stat level-stat"><span class="stat-label">WAVE</span><strong id="level">01 <small>/ 05</small></strong></div>
+            <div class="hud-stat lives-stat"><span class="stat-label">LIVES</span><strong id="lives" aria-label="3 lives"><i></i><i></i><i></i></strong></div>
+            <button class="pause-button" id="pauseButton" aria-label="Pause game" title="Pause (P)"><span>Ⅱ</span></button>
+          </div>
+          <div class="board-wrap">
+            <canvas id="game" aria-label="Breakout game field"></canvas>
+            <div class="scanline"></div>
+            <div class="overlay" id="overlay">
+              <div class="overlay-card" id="overlayCard">
+                <div class="overlay-kicker"><span class="tiny-diamond">◆</span> AFTERLIGHT ARCADE <span>— 07</span></div>
+                <div class="overlay-icon" id="overlayIcon"><span></span><span></span><span></span></div>
+                <h2 id="overlayTitle">FRACTURE</h2>
+                <p id="overlayText">Every collision creates another ball.<br>Keep the swarm alive. Clear the grid.</p>
+                <button class="primary-button" id="playButton"><span>START RUN</span><b>↗</b></button>
+                <div class="key-hint" id="keyHint"><span>←</span><span>→</span> MOVE <i>OR</i> DRAG ANYWHERE</div>
+              </div>
+            </div>
+            <div class="toast" id="toast">MULTIPLIER <b>×2</b></div>
+          </div>
+          <div class="underbar">
+            <div class="mode-label"><span class="mode-dot"></span><span id="statusText">READY WHEN YOU ARE</span></div>
+            <div class="level-progress" id="levelProgress" aria-label="Bricks remaining"><span></span></div>
+            <div class="tip-label"><span>✦</span> SPLIT ON IMPACT</div>
+          </div>
+        </div>
+        <div class="rail rail-right" aria-hidden="true"><span>LIVE SIMULATION</span><div class="rail-line"></div><span id="ballCountRail">BALLS — 01</span></div>
+      </section>
+
+      <section class="mobile-controls" aria-label="Touch controls">
+        <button id="leftControl" aria-label="Move paddle left">‹</button>
+        <span>DRAG TO STEER <i>·</i> TAP TO LAUNCH</span>
+        <button id="rightControl" aria-label="Move paddle right">›</button>
+      </section>
+    </main>
+    <footer><span>DESIGNED FOR THE IN-BETWEEN</span><span class="footer-center">NO TWO RUNS ALIKE <b>✳</b></span><span>© AFTERLIGHT SYSTEMS <span class="footer-year">2025</span></span></footer>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
